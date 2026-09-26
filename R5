@@ -19,8 +19,8 @@ ce_acceptance_norm = input.float(2.0, "CE Acceptance Normalizer", minval=1.0, ma
 
 grp_tf = "Zone Timeframes"
 show_native_zones = input.bool(true, "Show Native TF Zones", group=grp_tf)
-show_htf1_zones = input.bool(true, "Show HTF1 Zones", group=grp_tf)
-show_htf2_zones = input.bool(true, "Show HTF2 Zones", group=grp_tf)
+show_htf1_zones = input.bool(false, "Show HTF1 Zones", group=grp_tf)
+show_htf2_zones = input.bool(false, "Show HTF2 Zones", group=grp_tf)
 show_ce_lines = input.bool(true, "Show CE Lines", group=grp_tf)
 
 grp_market_regime = "D/W Market Regime"
