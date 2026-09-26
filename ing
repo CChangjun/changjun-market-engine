@@ -1,5 +1,5 @@
 //@version=6
-indicator("창준지표_R4_Candidate_State_Machine", overlay=true, max_boxes_count=340, max_labels_count=320, max_lines_count=340, dynamic_requests=true)
+indicator("새로운 모델 만드는 중..", overlay=true, max_boxes_count=340, max_labels_count=320, max_lines_count=340, dynamic_requests=true)
 
 //=====================================================
 // Inputs
