@@ -11,3 +11,30 @@ L/S: RR·EV·목표 확률·Posterior·Coherence 등 최종 게이트까지 통�
 주황 실선은 EMA Fast, 파란 실선은 EMA Slow, 노란 굴곡선은 60봉 Dealing Range의 중간값 EQ.
 긴 보라색 점선은 PWH/PWL(전주 고가/저가), 노란 점선은 PDH/PDL(전일 고가/저가). * 이미 소진된 선은 투명해져 회색에 가깝게 보일 수 있음.!
 주황/청록 점선은 활성 EQH/EQL, 짧은 형광 초록/분홍 점선은 Bull/Bear FVG·IFVG의 CE.!
+
+
+
+R5에서 추가: 
+Show Native TF Zones
+- 현재 보고 있는 차트 시간대의 FVG/IFVG를 표시.
+- 4시간 차트 → 4시간 FVG
+- 일봉 차트 → 일봉 FVG
+- 주봉 차트 → 주봉 FVG
+
+Show HTF1 Zones
+- 현재 차트보다 한 단계 높은 핵심 시간대의 FVG/IFVG를 표시.
+- 4시간 차트 → 일봉
+- 일봉 차트 → 주봉
+- 주봉 차트 → 월봉
+
+Show HTF2 Zones
+- 현재 차트보다 두 단계 높은 시간대의 FVG/IFVG를 표시.
+- 4시간 차트 → 주봉
+- 일봉 차트 → 월봉
+- 주봉 이상 → 비활성화
+
+- 적용 예시
+
+- 4시간 단기매매: Native + HTF1 + HTF2 (복잡하면 HTF1, HTF2는 끄기)
+- 일봉 스윙: Native + HTF1, HTF2는 선택
+- 주봉 장기분석: Native + HTF1
