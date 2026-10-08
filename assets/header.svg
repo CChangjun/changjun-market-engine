@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
-  <title id="title">Changjun Indicator</title>
-  <desc id="desc">A dark market-structure research banner with candlesticks and probability curves.</desc>
+  <title id="title">Changjun Market Engine</title>
+  <desc id="desc">A dark causal market-engine banner with candlesticks and probability curves.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#07111f"/>
@@ -42,10 +42,10 @@
     <g transform="translate(1100 0)"><line x1="0" y1="65" x2="0" y2="138" stroke="#fb7185" stroke-width="2"/><rect x="-8" y="80" width="16" height="35" rx="2" fill="#fb7185"/></g>
   </g>
 
-  <text x="72" y="116" fill="#f8fafc" font-family="'Times New Roman', Times, serif" font-size="54" font-weight="700" letter-spacing="2">CHANGJUN INDICATOR</text>
+  <text x="72" y="116" fill="#f8fafc" font-family="'Times New Roman', Times, serif" font-size="43" font-weight="700" letter-spacing="1.5">CHANGJUN MARKET ENGINE</text>
   <text x="74" y="157" fill="#99f6e4" font-family="'Times New Roman', Times, serif" font-size="21" letter-spacing="4">STRUCTURE · LIQUIDITY · PROBABILITY</text>
   <line x1="74" y1="184" x2="590" y2="184" stroke="#38bdf8" stroke-width="2" opacity="0.72"/>
-  <text x="74" y="222" fill="#cbd5e1" font-family="'Times New Roman', Times, serif" font-size="19">A causal multi-asset research model for TradingView</text>
+  <text x="74" y="222" fill="#cbd5e1" font-family="'Times New Roman', Times, serif" font-size="19">A causal multi-asset research engine for TradingView</text>
   <rect x="74" y="244" width="86" height="28" rx="14" fill="#14b8a6" opacity="0.2" stroke="#2dd4bf"/>
   <text x="117" y="264" text-anchor="middle" fill="#99f6e4" font-family="'Times New Roman', Times, serif" font-size="15" font-weight="700">REVISION 7</text>
 </svg>

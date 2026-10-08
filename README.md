@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" alt="Changjun Indicator — market structure, liquidity and probability research" width="100%">
+  <img src="assets/header.svg" alt="Changjun Market Engine — structure, liquidity and probability research" width="100%">
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  Multi-asset market-structure and probability research indicator for TradingView.
+  A causal multi-asset market-structure and probability engine for TradingView.
 </p>
 
 > [!IMPORTANT]
@@ -18,7 +18,7 @@
 
 ## Overview
 
-창준지표는 차트 위에 ICT 용어를 단순히 표시하는 지표가 아닙니다. 시장에서 확인된 사건을 순서대로 기록하고, **시장 환경 → 구조적 설정 → 확인 증거 → 실행 가능성**을 서로 다른 단계에서 평가하는 Pine Script v6 기반 의사결정 모델입니다.
+**Changjun Market Engine**(창준지표)은 차트 위에 ICT 용어를 단순히 표시하는 지표가 아닙니다. 시장에서 확인된 사건을 순서대로 기록하고, **시장 환경 → 구조적 설정 → 확인 증거 → 실행 가능성**을 서로 다른 단계에서 평가하는 Pine Script v6 기반 의사결정 모델입니다.
 
 이 프로젝트는 고점과 저점을 미리 맞히는 것보다 다음 원칙을 우선합니다.
 
@@ -151,4 +151,4 @@ R7에서는 같은 정보를 여러 단계에서 반복 탈락시키지 않도�
 
 ---
 
-<p align="center"><sub>Designed and maintained by ChangJun · Pine Script® v6 research project</sub></p>
+<p align="center"><sub>Changjun Market Engine · Designed and maintained by ChangJun · Pine Script® v6 research project</sub></p>
