@@ -35,7 +35,7 @@
 | R5 | [`R5`](./R5) | Historical checkpoint | Bull/Bear/Range expert routing |
 | Legacy | [`ing`](./ing) | Archived working snapshot | 초기 개발 스냅샷 |
 
-R7이 현재 개발 기준입니다. R5와 `ing`는 비교와 회귀 확인을 위해 보존합니다.
+R7이 현재 개발 기준입니다. (26.10.08 기준)
 
 ## Model flow
 
@@ -73,7 +73,6 @@ R7에서는 같은 정보를 여러 단계에서 반복 탈락시키지 않도�
 4. `Asset Profile`을 `Auto`로 두거나 Crypto, US Semiconductor, Tech ETF 중 하나를 직접 선택합니다.
 5. 먼저 4H·1D·1W에서 구조와 후보 상태를 확인합니다.
 
-> R7 컴파일이 확인되기 전에는 기존 R5를 삭제하지 않는 것을 권장합니다.
 
 ## Signal guide
 
