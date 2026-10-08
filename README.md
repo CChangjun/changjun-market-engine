@@ -18,7 +18,7 @@
 
 ## Overview
 
-**Changjun Market Engine**(창준지표)은 차트 위에 ICT 용어를 단순히 표시하는 지표가 아닙니다. 시장에서 확인된 사건을 순서대로 기록하고, **시장 환경 → 구조적 설정 → 확인 증거 → 실행 가능성**을 서로 다른 단계에서 평가하는 Pine Script v6 기반 의사결정 모델입니다.
+Changjun Market Engine는 시장에서 확인된 사건을 순서대로 기록하고, 시장 환경 → 구조적 설정 → 확인 증거 → 실행 가능성을 서로 다른 단계에서 평가하는 Pine Script기반 의사결정 모델입니다.
 
 이 프로젝트는 고점과 저점을 미리 맞히는 것보다 다음 원칙을 우선합니다.
 
@@ -38,7 +38,8 @@
 | Probability | 구조적 Prior와 새 Evidence를 분리해 Candidate 품질 평가 |
 | Execution | Pending 이후 가격 확인, RR, EV와 목표 도달 가능성으로 L/S 결정 |
 
-최종 `L/S`는 하나의 조건식이 우연히 참이 되어 출력되는 표식이 아니라, 인과 순서와 상태를 통과한 결과입니다. 반대로 `C`는 분석할 가치가 생긴 후보일 뿐 아직 매수·매도 신호가 아닙니다.
+최종 `L/S`는 하나의 조건식이 우연히 참이 되어 출력되는 표식이 아니라, 인과 순서와 상태를 통과한 결과입니다. 
+반대로 `C`는 분석할 가치가 생긴 후보일 뿐 아직 매수·매도 신호가 아닙니다.
 
 ## Current release
 
@@ -81,8 +82,8 @@ R7에서는 같은 정보를 여러 단계에서 반복 탈락시키지 않도�
 ## Quick start
 
 1. [`R7`](./R7) 파일을 열고 전체 코드를 복사합니다.
-2. TradingView의 **Pine Editor**에 붙여넣습니다.
-3. 저장 후 **Add to chart**를 선택합니다.
+2. TradingView의 Pine Editor에 붙여넣습니다.
+3. 저장 후 Add to chart를 선택합니다.
 4. `Asset Profile`을 `Auto`로 두거나 Crypto, US Semiconductor, Tech ETF 중 하나를 직접 선택합니다.
 5. 먼저 4H·1D·1W에서 구조와 후보 상태를 확인합니다.
 
