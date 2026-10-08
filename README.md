@@ -18,14 +18,27 @@
 
 ## Overview
 
-창준지표는 시장 구조, 유동성, FVG/IFVG, Order Block, 상위 시간봉 환경과 확률 기반 실행 조건을 하나의 Pine Script v6 모델로 결합하는 프로젝트입니다.
+창준지표는 차트 위에 ICT 용어를 단순히 표시하는 지표가 아닙니다. 시장에서 확인된 사건을 순서대로 기록하고, **시장 환경 → 구조적 설정 → 확인 증거 → 실행 가능성**을 서로 다른 단계에서 평가하는 Pine Script v6 기반 의사결정 모델입니다.
 
-단순히 Long과 Short를 교대로 출력하는 것이 아니라 다음 질문을 순서대로 분리해 판단합니다.
+이 프로젝트는 고점과 저점을 미리 맞히는 것보다 다음 원칙을 우선합니다.
 
-- 지금 시장은 Bull, Bear, Range 중 어디에 가까운가?
-- 어떤 구조적 사건이 실제 후보를 만들었는가?
-- 후보 이후 새로운 확인 증거가 충분한가?
-- 현재 가격에서 RR, EV와 목표 도달 가능성이 진입을 허용하는가?
+- 확정되지 않은 Pivot이나 미래 HTF 정보를 사용하지 않습니다.
+- Sweep, 구조 전환, Displacement와 Zone 반응의 발생 순서를 보존합니다.
+- 좋은 분석 위치와 실제 진입 가능한 가격을 구분합니다.
+- 신호 개수를 늘리기 위한 임의의 threshold 완화보다 검증 가능한 구조를 우선합니다.
+
+### What the model evaluates
+
+| Domain | 역할 |
+|---|---|
+| Market context | Asset Profile과 Daily/Weekly Regime으로 Bull, Bear, Range 환경 분류 |
+| Structure & liquidity | BOS, CHOCH, MSS, Sweep, EQH/EQL과 외부 유동성 추적 |
+| Price delivery | FVG/IFVG와 Native Order Block의 생성·반응·소비·무효화 관리 |
+| Expert routing | 시장 환경에 따라 TC, CT, REV, RNG 설정을 분리 |
+| Probability | 구조적 Prior와 새 Evidence를 분리해 Candidate 품질 평가 |
+| Execution | Pending 이후 가격 확인, RR, EV와 목표 도달 가능성으로 L/S 결정 |
+
+최종 `L/S`는 하나의 조건식이 우연히 참이 되어 출력되는 표식이 아니라, 인과 순서와 상태를 통과한 결과입니다. 반대로 `C`는 분석할 가치가 생긴 후보일 뿐 아직 매수·매도 신호가 아닙니다.
 
 ## Current release
 
