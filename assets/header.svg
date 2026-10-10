@@ -1,51 +1,178 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
-  <title id="title">Changjun Market Engine</title>
-  <desc id="desc">A dark causal market-engine banner with candlesticks and probability curves.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">Changjun Market Engine causal decision architecture</title>
+  <desc id="desc">Academic-style schematic of the R7 architecture from asset and timeframe context through causal structure, expert routing, probability responsibilities, candidate state, execution gates, and final long or short output.</desc>
+
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#07111f"/>
-      <stop offset="0.55" stop-color="#0f2235"/>
-      <stop offset="1" stop-color="#102b2b"/>
-    </linearGradient>
-    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.25"/>
-      <stop offset="0.52" stop-color="#38bdf8"/>
-      <stop offset="1" stop-color="#2dd4bf"/>
-    </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0f766e"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.10"/>
     </filter>
-    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#94a3b8" stroke-opacity="0.08" stroke-width="1"/>
-    </pattern>
+    <style>
+      .paper { fill: #fbfcfe; }
+      .title { font: 700 35px 'Times New Roman', Times, serif; fill: #0f172a; letter-spacing: 0.7px; }
+      .subtitle { font: italic 19px 'Times New Roman', Times, serif; fill: #475569; }
+      .section { font: 700 17px 'Times New Roman', Times, serif; fill: #0f172a; letter-spacing: 1.2px; }
+      .box-title { font: 700 21px 'Times New Roman', Times, serif; fill: #0f172a; }
+      .body { font: 17px 'Times New Roman', Times, serif; fill: #334155; }
+      .small { font: 15px 'Times New Roman', Times, serif; fill: #475569; }
+      .tiny { font: 13px 'Times New Roman', Times, serif; fill: #64748b; }
+      .formula { font: italic 18px 'Times New Roman', Times, serif; fill: #0f172a; }
+      .pill { font: 700 15px 'Times New Roman', Times, serif; fill: #0f172a; }
+      .input-box { fill: #ffffff; stroke: #64748b; stroke-width: 1.4; rx: 7; filter: url(#shadow); }
+      .structure-box { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.5; rx: 7; }
+      .zone-box { fill: #f0fdfa; stroke: #0f766e; stroke-width: 1.5; rx: 7; }
+      .router-box { fill: #f8fafc; stroke: #334155; stroke-width: 1.7; rx: 8; filter: url(#shadow); }
+      .prob-frame { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.4; rx: 9; }
+      .prior-box { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.5; rx: 6; }
+      .evidence-box { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 1.5; rx: 6; }
+      .posterior-box { fill: #ecfeff; stroke: #0891b2; stroke-width: 1.7; rx: 6; }
+      .risk-box { fill: #fff7ed; stroke: #c2410c; stroke-width: 1.5; rx: 6; }
+      .state-box { fill: #ffffff; stroke: #475569; stroke-width: 1.5; rx: 7; filter: url(#shadow); }
+      .final-box { fill: #f0fdf4; stroke: #15803d; stroke-width: 1.8; rx: 7; filter: url(#shadow); }
+      .retire-box { fill: #f8fafc; stroke: #94a3b8; stroke-width: 1.2; rx: 16; }
+      .flow { fill: none; stroke: #334155; stroke-width: 1.8; marker-end: url(#arrow); }
+      .flow-teal { fill: none; stroke: #0f766e; stroke-width: 2.1; marker-end: url(#arrowTeal); }
+      .guide { fill: none; stroke: #94a3b8; stroke-width: 1.3; stroke-dasharray: 6 5; }
+      .divider { stroke: #cbd5e1; stroke-width: 1; }
+    </style>
   </defs>
 
-  <rect width="1200" height="300" rx="20" fill="url(#bg)"/>
-  <rect width="1200" height="300" rx="20" fill="url(#grid)"/>
-  <circle cx="1040" cy="44" r="170" fill="#14b8a6" opacity="0.06"/>
-  <circle cx="180" cy="285" r="210" fill="#38bdf8" opacity="0.05"/>
+  <rect class="paper" width="1600" height="920" rx="12"/>
+  <rect x="18" y="18" width="1564" height="894" rx="9" fill="none" stroke="#cbd5e1" stroke-width="1.2"/>
 
-  <g opacity="0.82">
-    <path d="M740 225 C790 220 805 178 850 184 S925 118 970 132 S1040 78 1135 68" fill="none" stroke="url(#line)" stroke-width="4" filter="url(#glow)"/>
-    <path d="M740 240 C795 236 835 222 880 216 S960 188 1005 196 S1080 158 1140 166" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.9"/>
-  </g>
+  <text id="diagram-title" x="55" y="61" class="title">Changjun Market Engine — Causal Decision Architecture</text>
+  <text x="56" y="91" class="subtitle">R7 research architecture: information ownership, state transitions, and execution gating</text>
+  <rect x="1370" y="42" width="162" height="38" rx="19" fill="#0f172a"/>
+  <text x="1451" y="67" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="17" font-weight="700" fill="#ffffff">REVISION 7</text>
 
-  <g stroke-linecap="round">
-    <g transform="translate(785 0)"><line x1="0" y1="150" x2="0" y2="226" stroke="#2dd4bf" stroke-width="2"/><rect x="-8" y="170" width="16" height="34" rx="2" fill="#2dd4bf"/></g>
-    <g transform="translate(830 0)"><line x1="0" y1="140" x2="0" y2="210" stroke="#fb7185" stroke-width="2"/><rect x="-8" y="158" width="16" height="30" rx="2" fill="#fb7185"/></g>
-    <g transform="translate(875 0)"><line x1="0" y1="120" x2="0" y2="198" stroke="#2dd4bf" stroke-width="2"/><rect x="-8" y="142" width="16" height="38" rx="2" fill="#2dd4bf"/></g>
-    <g transform="translate(920 0)"><line x1="0" y1="92" x2="0" y2="170" stroke="#2dd4bf" stroke-width="2"/><rect x="-8" y="112" width="16" height="40" rx="2" fill="#2dd4bf"/></g>
-    <g transform="translate(965 0)"><line x1="0" y1="105" x2="0" y2="178" stroke="#fb7185" stroke-width="2"/><rect x="-8" y="122" width="16" height="32" rx="2" fill="#fb7185"/></g>
-    <g transform="translate(1010 0)"><line x1="0" y1="72" x2="0" y2="150" stroke="#2dd4bf" stroke-width="2"/><rect x="-8" y="94" width="16" height="39" rx="2" fill="#2dd4bf"/></g>
-    <g transform="translate(1055 0)"><line x1="0" y1="52" x2="0" y2="129" stroke="#2dd4bf" stroke-width="2"/><rect x="-8" y="72" width="16" height="40" rx="2" fill="#2dd4bf"/></g>
-    <g transform="translate(1100 0)"><line x1="0" y1="65" x2="0" y2="138" stroke="#fb7185" stroke-width="2"/><rect x="-8" y="80" width="16" height="35" rx="2" fill="#fb7185"/></g>
-  </g>
+  <text x="55" y="127" class="section">I. CONFIRMED MARKET INFORMATION</text>
 
-  <text x="72" y="116" fill="#f8fafc" font-family="'Times New Roman', Times, serif" font-size="43" font-weight="700" letter-spacing="1.5">CHANGJUN MARKET ENGINE</text>
-  <text x="74" y="157" fill="#99f6e4" font-family="'Times New Roman', Times, serif" font-size="21" letter-spacing="4">STRUCTURE · LIQUIDITY · PROBABILITY</text>
-  <line x1="74" y1="184" x2="590" y2="184" stroke="#38bdf8" stroke-width="2" opacity="0.72"/>
-  <text x="74" y="222" fill="#cbd5e1" font-family="'Times New Roman', Times, serif" font-size="19">A causal multi-asset research engine for TradingView</text>
-  <rect x="74" y="244" width="86" height="28" rx="14" fill="#14b8a6" opacity="0.2" stroke="#2dd4bf"/>
-  <text x="117" y="264" text-anchor="middle" fill="#99f6e4" font-family="'Times New Roman', Times, serif" font-size="15" font-weight="700">REVISION 7</text>
+  <rect x="55" y="145" width="270" height="112" class="input-box"/>
+  <text x="190" y="178" text-anchor="middle" class="box-title">Asset &amp; TF Context</text>
+  <line x1="78" y1="190" x2="302" y2="190" class="divider"/>
+  <text x="190" y="216" text-anchor="middle" class="body">Crypto · US Semi · Tech ETF</text>
+  <text x="190" y="240" text-anchor="middle" class="small">Native / HTF1 / HTF2 router</text>
+
+  <rect x="370" y="145" width="270" height="112" class="input-box"/>
+  <text x="505" y="178" text-anchor="middle" class="box-title">Persistent Regime</text>
+  <line x1="393" y1="190" x2="617" y2="190" class="divider"/>
+  <text x="505" y="216" text-anchor="middle" class="body">Daily 0.68 + Weekly 0.32</text>
+  <text x="505" y="240" text-anchor="middle" class="small">Bull · Range · Bear ownership</text>
+
+  <rect x="685" y="145" width="390" height="112" class="structure-box"/>
+  <text x="880" y="178" text-anchor="middle" class="box-title">Causal Structure &amp; Liquidity</text>
+  <line x1="710" y1="190" x2="1050" y2="190" class="divider"/>
+  <text x="880" y="216" text-anchor="middle" class="body">BOS · CHOCH · MSS · Sweep · EQH/EQL</text>
+  <text x="880" y="240" text-anchor="middle" class="small">Ordered, confirmed-bar event sequences</text>
+
+  <rect x="1120" y="145" width="425" height="112" class="zone-box"/>
+  <text x="1332" y="178" text-anchor="middle" class="box-title">Stateful Price Delivery</text>
+  <line x1="1146" y1="190" x2="1519" y2="190" class="divider"/>
+  <text x="1332" y="216" text-anchor="middle" class="body">FVG → IFVG · Native causal Order Block</text>
+  <text x="1332" y="240" text-anchor="middle" class="small">CE · reaction · consumption · invalidation</text>
+
+  <path d="M325 201 H362" class="flow"/>
+  <path d="M640 201 H677" class="flow"/>
+  <path d="M1075 201 H1112" class="flow"/>
+
+  <text x="55" y="307" class="section">II. REGIME-OWNED SETUP ROUTING</text>
+  <rect x="255" y="325" width="1090" height="96" class="router-box"/>
+  <text x="395" y="358" class="box-title">Expert Router</text>
+  <text x="395" y="387" class="small">Persistent regime owns setup type; identity is frozen at C.</text>
+
+  <rect x="790" y="348" width="95" height="43" rx="21" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="837" y="375" text-anchor="middle" class="pill">TC</text>
+  <rect x="900" y="348" width="95" height="43" rx="21" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="947" y="375" text-anchor="middle" class="pill">CT</text>
+  <rect x="1010" y="348" width="95" height="43" rx="21" fill="#ffedd5" stroke="#c2410c"/>
+  <text x="1057" y="375" text-anchor="middle" class="pill">REV</text>
+  <rect x="1120" y="348" width="95" height="43" rx="21" fill="#dcfce7" stroke="#15803d"/>
+  <text x="1167" y="375" text-anchor="middle" class="pill">RNG</text>
+
+  <path d="M505 257 V285 H500 V317" class="flow"/>
+  <path d="M880 257 V317" class="flow"/>
+  <path d="M1332 257 V285 H1100 V317" class="flow"/>
+  <path d="M190 257 V285 H340 V317" class="guide"/>
+
+  <text x="55" y="458" class="section">III. PROBABILITY RESPONSIBILITY LAYER</text>
+  <rect x="55" y="481" width="1490" height="166" class="prob-frame"/>
+
+  <rect x="82" y="508" width="305" height="111" class="prior-box"/>
+  <text x="234" y="540" text-anchor="middle" class="box-title">Structural Prior</text>
+  <text x="234" y="569" text-anchor="middle" class="body">Regime · location · liquidity</text>
+  <text x="234" y="594" text-anchor="middle" class="small">zone stability · HTF context</text>
+
+  <rect x="442" y="508" width="305" height="111" class="evidence-box"/>
+  <text x="594" y="540" text-anchor="middle" class="box-title">Confirmation Evidence</text>
+  <text x="594" y="569" text-anchor="middle" class="body">Displacement · reaction</text>
+  <text x="594" y="594" text-anchor="middle" class="small">acceptance · coherence</text>
+
+  <rect x="802" y="508" width="305" height="111" class="posterior-box"/>
+  <text x="954" y="540" text-anchor="middle" class="box-title">Posterior Score</text>
+  <text x="954" y="570" text-anchor="middle" class="formula">logit(Post) = logit(Prior) + Evidence</text>
+  <text x="954" y="596" text-anchor="middle" class="small">Directional confidence, not calibrated win rate</text>
+
+  <rect x="1162" y="508" width="355" height="111" class="risk-box"/>
+  <text x="1339" y="540" text-anchor="middle" class="box-title">Execution Risk &amp; Reach</text>
+  <text x="1339" y="569" text-anchor="middle" class="body">Adverse selection · directional risk</text>
+  <text x="1339" y="594" text-anchor="middle" class="small">Crypto 7d band · US σ√T target · EV</text>
+
+  <path d="M387 563 H434" class="flow"/>
+  <path d="M747 563 H794" class="flow-teal"/>
+  <path d="M800 421 V487 H234 V500" class="flow"/>
+  <path d="M850 421 V496 H594 V500" class="flow"/>
+  <path d="M1050 421 V487 H1339 V500" class="flow"/>
+
+  <text x="55" y="687" class="section">IV. SINGLE-OWNER CANDIDATE STATE MACHINE</text>
+
+  <rect x="70" y="707" width="230" height="82" class="state-box"/>
+  <text x="185" y="739" text-anchor="middle" class="box-title">Candidate C</text>
+  <text x="185" y="766" text-anchor="middle" class="small">Snapshot route · prices · Setup ID</text>
+
+  <rect x="360" y="707" width="250" height="82" class="state-box"/>
+  <text x="485" y="739" text-anchor="middle" class="box-title">Pending</text>
+  <text x="485" y="766" text-anchor="middle" class="small">≥ 1 confirmed bar · Posterior latch</text>
+
+  <polygon points="700,708 755,748 700,788 645,748" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="700" y="743" text-anchor="middle" class="small">Price</text>
+  <text x="700" y="762" text-anchor="middle" class="small">confirm?</text>
+
+  <rect x="810" y="692" width="465" height="112" class="final-box"/>
+  <text x="1042" y="725" text-anchor="middle" class="box-title">Independent Final Gate</text>
+  <text x="1042" y="756" text-anchor="middle" class="formula">Post<tspan baseline-shift="sub" font-size="13">latched</tspan> ∧ RR ∧ EV ∧ P(Target)</text>
+  <text x="1042" y="784" text-anchor="middle" class="small">∧ armed/cooldown ∧ valid frozen route</text>
+
+  <rect x="1350" y="707" width="180" height="82" rx="8" fill="#0f766e" filter="url(#shadow)"/>
+  <text x="1440" y="740" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="22" font-weight="700" fill="#ffffff">LONG / SHORT</text>
+  <text x="1440" y="768" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="15" fill="#ccfbf1">confirmed terminal output</text>
+
+  <rect x="385" y="809" width="200" height="35" class="retire-box"/>
+  <text x="485" y="832" text-anchor="middle" class="small">Retire: invalidation / expiry</text>
+
+  <path d="M954 619 V660 H185 V699" class="flow-teal"/>
+  <path d="M300 748 H352" class="flow"/>
+  <path d="M610 748 H637" class="flow"/>
+  <path d="M755 748 H802" class="flow"/>
+  <path d="M1275 748 H1342" class="flow-teal"/>
+  <path d="M1339 619 V666 H1165 V684" class="flow"/>
+  <path d="M485 789 V801" class="flow"/>
+  <text x="772" y="733" class="tiny">confirmed break</text>
+
+  <rect x="55" y="853" width="1490" height="35" rx="5" fill="#eef2f7" stroke="#cbd5e1"/>
+  <text x="204" y="876" text-anchor="middle" class="small">Confirmed bars only</text>
+  <line x1="350" y1="860" x2="350" y2="881" class="divider"/>
+  <text x="498" y="876" text-anchor="middle" class="small">Ordered causal sequence</text>
+  <line x1="646" y1="860" x2="646" y2="881" class="divider"/>
+  <text x="795" y="876" text-anchor="middle" class="small">Single-owner state</text>
+  <line x1="944" y1="860" x2="944" y2="881" class="divider"/>
+  <text x="1100" y="876" text-anchor="middle" class="small">No repeated Final evidence</text>
+  <line x1="1258" y1="860" x2="1258" y2="881" class="divider"/>
+  <text x="1402" y="876" text-anchor="middle" class="small">Asset-aware target model</text>
+
+  <text x="800" y="907" text-anchor="middle" class="tiny">Figure 1. Changjun Market Engine R7 — causal information flow and decision-state separation.</text>
 </svg>
